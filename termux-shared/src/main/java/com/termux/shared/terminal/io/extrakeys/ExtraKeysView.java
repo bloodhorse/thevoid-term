@@ -166,6 +166,9 @@ public final class ExtraKeysView extends GridLayout {
     /** Defines whether text for the extra keys button should be all capitalized automatically. */
     private boolean mButtonTextAllCaps = true;
 
+    /** The scale on android's default button text size for every extra key. */
+    private float mButtonTextScale = 1;
+
 
     /**
      * Defines the duration in milliseconds before a press turns into a long press. The default
@@ -308,6 +311,11 @@ public final class ExtraKeysView extends GridLayout {
         mButtonActiveBackgroundColor = buttonActiveBackgroundColor;
     }
 
+    /** Set {@link #mButtonTextScale}. */
+    public void setButtonTextScale(float buttonTextScale) {
+        mButtonTextScale = buttonTextScale;
+    }
+
     /** Set {@link #mButtonTextAllCaps}. */
     public void setButtonTextAllCaps(boolean buttonTextAllCaps) {
         mButtonTextAllCaps = buttonTextAllCaps;
@@ -391,6 +399,7 @@ public final class ExtraKeysView extends GridLayout {
                 button.setText(buttonInfo.getDisplay());
                 button.setTextColor(mButtonTextColor);
                 button.setAllCaps(mButtonTextAllCaps);
+                button.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, button.getTextSize() * mButtonTextScale);
                 button.setPadding(0, 0, 0, 0);
 
                 button.setOnClickListener(view -> {
@@ -574,6 +583,7 @@ public final class ExtraKeysView extends GridLayout {
         }
         button.setText(extraButton.getDisplay());
         button.setAllCaps(mButtonTextAllCaps);
+                button.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, button.getTextSize() * mButtonTextScale);
         button.setPadding(0, 0, 0, 0);
         button.setMinHeight(0);
         button.setMinWidth(0);

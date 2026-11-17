@@ -885,6 +885,7 @@ public final class TermuxActivity extends Activity implements ServiceConnection 
 
             if (mExtraKeysView != null) {
                 mExtraKeysView.setButtonTextAllCaps(mProperties.shouldExtraKeysTextBeAllCaps());
+                mExtraKeysView.setButtonTextScale(mProperties.getExtraKeysTextScale());
                 mExtraKeysView.reload(mProperties.getExtraKeysInfo());
             }
         }

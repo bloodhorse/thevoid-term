@@ -221,6 +221,12 @@ public final class TermuxPropertyConstants {
     public static final float IVALUE_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR_MAX = 3;
     public static final float DEFAULT_IVALUE_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR = 1;
 
+    /** Defines the key for the extra keys text size, as a scale on android's default button text */
+    public static final String KEY_EXTRA_KEYS_TEXT_SCALE =  "extra-keys-text-scale"; // Default: "extra-keys-text-scale"
+    public static final float IVALUE_EXTRA_KEYS_TEXT_SCALE_MIN = 0.5f;
+    public static final float IVALUE_EXTRA_KEYS_TEXT_SCALE_MAX = 3;
+    public static final float DEFAULT_IVALUE_EXTRA_KEYS_TEXT_SCALE = 1;
+
 
 
 
@@ -351,6 +357,7 @@ public final class TermuxPropertyConstants {
 
         /* float */
         KEY_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR,
+        KEY_EXTRA_KEYS_TEXT_SCALE,
 
         /* Integer */
         KEY_SHORTCUT_CREATE_SESSION,

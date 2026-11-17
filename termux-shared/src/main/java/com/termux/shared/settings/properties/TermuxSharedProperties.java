@@ -234,6 +234,8 @@ public abstract class TermuxSharedProperties {
             /* float */
             case TermuxPropertyConstants.KEY_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR:
                 return (float) getTerminalToolbarHeightScaleFactorInternalPropertyValueFromValue(value);
+            case TermuxPropertyConstants.KEY_EXTRA_KEYS_TEXT_SCALE:
+                return (float) getExtraKeysTextScaleInternalPropertyValueFromValue(value);
 
             /* Integer (may be null) */
             case TermuxPropertyConstants.KEY_SHORTCUT_CREATE_SESSION:
@@ -402,6 +404,15 @@ public abstract class TermuxSharedProperties {
             TermuxPropertyConstants.DEFAULT_IVALUE_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR,
             TermuxPropertyConstants.IVALUE_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR_MIN,
             TermuxPropertyConstants.IVALUE_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR_MAX,
+            true, true, LOG_TAG);
+    }
+
+    public static float getExtraKeysTextScaleInternalPropertyValueFromValue(String value) {
+        return SharedProperties.getDefaultIfNotInRange(TermuxPropertyConstants.KEY_EXTRA_KEYS_TEXT_SCALE,
+            DataUtils.getFloatFromString(value, TermuxPropertyConstants.DEFAULT_IVALUE_EXTRA_KEYS_TEXT_SCALE),
+            TermuxPropertyConstants.DEFAULT_IVALUE_EXTRA_KEYS_TEXT_SCALE,
+            TermuxPropertyConstants.IVALUE_EXTRA_KEYS_TEXT_SCALE_MIN,
+            TermuxPropertyConstants.IVALUE_EXTRA_KEYS_TEXT_SCALE_MAX,
             true, true, LOG_TAG);
     }
 
@@ -577,6 +588,10 @@ public abstract class TermuxSharedProperties {
 
     public float getTerminalToolbarHeightScaleFactor() {
         return (float) getInternalPropertyValue(TermuxPropertyConstants.KEY_TERMINAL_TOOLBAR_HEIGHT_SCALE_FACTOR, true);
+    }
+
+    public float getExtraKeysTextScale() {
+        return (float) getInternalPropertyValue(TermuxPropertyConstants.KEY_EXTRA_KEYS_TEXT_SCALE, true);
     }
 
     public boolean isBackKeyTheEscapeKey() {
